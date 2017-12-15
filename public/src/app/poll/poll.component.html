@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div *ngIf = "poll" class = "header">
+        <h4>{{ poll.question }}</h4>
+        <p>Cast your vote by clicking on the vote button!</p>
+    </div>
+    <div class="table"*ngIf = "pollOptions">
+        <table>
+            <tr>
+                <th>Option</th>
+                <th>Current Count of Votes</th>
+                <th>Action </th>
+            </tr>
+            <tr *ngFor = "let option of pollOptions">
+                <td>{{ option.option }}</td>
+                <td>{{ option.likes }}</td>
+                <td><button type="button" name="button" (click)="getPollOption(option._id)">Vote</button></td>
+            </tr>
+        </table>
+        <p><a [routerLink] = "['/dashboard']">Go Back to Dashboard</a></p>
+    </div>
+  </div>
+  

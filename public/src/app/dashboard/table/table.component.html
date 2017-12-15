@@ -1,0 +1,15 @@
+<div class="container">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Survey Question</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor = "let polls of allPolls">
+            <td>{{ polls.creator }}</td>
+            <td><a [routerLink] = "['/poll', polls._id]">{{ polls.question }}</a></td>
+            <td><p *ngIf = "polls.creator == name"><button type="button" name="button" (click) = "deletePoll(polls._id)">Delete</button></p></td>
+        </tr>
+    </table>
+  </div>
+  
